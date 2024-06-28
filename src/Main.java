@@ -22,15 +22,33 @@ public class Main {
             int choice = sc.nextInt();
 
             switch (choice) {
-                case 1: createAccount(); break; //계좌 생성
-                case 2: findAccountByAccountNo(); break;    // 계좌번호로 계좌 찾기
-                case 3: findAccountByName(); break; // 소유자명으로 계좌 찾기
-                case 4: ListAllAccount(); break;    //계좌 목록
-                case 5: depositAccount(); break;    // 입금
-                case 6: withdrawAccount(); break;   // 출금
-                case 7: checkAccountBalance(); break;  // 잔고 확인
-                case 8: checkTransactionList(); break;  // 거래내역
-                case 9: exit(); return;
+                case 1:
+                    createAccount();
+                    break; //계좌 생성
+                case 2:
+                    findAccountByAccountNo();
+                    break;    // 계좌번호로 계좌 찾기
+                case 3:
+                    findAccountByName();
+                    break; // 소유자명으로 계좌 찾기
+                case 4:
+                    ListAllAccount();
+                    break;    //계좌 목록
+                case 5:
+                    depositAccount();
+                    break;    // 입금
+                case 6:
+                    withdrawAccount();
+                    break;   // 출금
+                case 7:
+                    checkAccountBalance();
+                    break;  // 잔고 확인
+                case 8:
+                    checkTransactionList();
+                    break;  // 거래내역
+                case 9:
+                    exit();
+                    return;
             }
         }
     }
@@ -68,7 +86,7 @@ public class Main {
         Bank bank = Bank.getInstance();
         List<Account> accounts = bank.getAccounts();
 
-        System.out.println("= 해당 계좌번호의 계좌정보 =");
+        System.out.println("= 해당 소유자명의 계좌정보 =");
         for (Account account : accounts) {
             if (account.getName().equals(name)) {
                 System.out.println(account.toString());
