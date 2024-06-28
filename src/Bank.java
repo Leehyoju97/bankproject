@@ -19,6 +19,7 @@ public class Bank {
 
     public void addAccount(String accountNo, String name) {
         accounts.add(new Account(accountNo, name));
+        totalAccount++;
     }
 
     public List<Account> getAccounts() {

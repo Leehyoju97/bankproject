@@ -16,7 +16,8 @@ public class Main {
             System.out.println("6. 출금");
             System.out.println("7. 잔고 확인");
             System.out.println("8. 거래 내역");
-            System.out.println("9. 종료");
+            System.out.println("9. 총 계좌수");
+            System.out.println("10. 종료");
             System.out.println("======================");
             System.out.print("번호 선택: ");
             int choice = sc.nextInt();
@@ -47,6 +48,9 @@ public class Main {
                     checkTransactionList();
                     break;  // 거래내역
                 case 9:
+                    totalAccount();
+                    break;
+                case 10:
                     exit();
                     return;
             }
@@ -156,5 +160,11 @@ public class Main {
 
     private static void exit() {
         System.out.println("프로그램을 종료합니다.");
+    }
+
+    private static void totalAccount() {
+        Bank bank = Bank.getInstance();
+        int totalAccount = bank.getTotalAccount();
+        System.out.println("총 계좌수 : " + totalAccount);
     }
 }
