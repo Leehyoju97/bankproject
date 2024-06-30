@@ -2,8 +2,6 @@ import java.util.*;
 
 public class Account {
     private static Set<String> existingAccounts = new HashSet<>();
-    static final String DEPOSIT = "입금";
-    static final String WITHDRAW = "출금";
 
     private String accountNo;
     private String name;
@@ -24,7 +22,7 @@ public class Account {
         balance += amount;
         System.out.println(amount + "원 입금하셨습니다.");
         System.out.println("현재 잔액은 " + balance + "원 입니다.");
-        Transaction transaction = new Transaction(transactionDate, transactionTime, Account.DEPOSIT, amount, balance);
+        Transaction transaction = new Transaction(transactionDate, transactionTime, TransactionType.DEPOSIT.getTransaction(), amount, balance);
         transactions.add(transaction);
     }
 
@@ -39,7 +37,7 @@ public class Account {
         balance -= amount;
         System.out.println(amount + "원 출금하셨습니다.");
         System.out.println("현재 잔액은 " + balance + "원 입니다.");
-        Transaction transaction = new Transaction(transactionDate, transactionTime, Account.WITHDRAW, amount, balance);
+        Transaction transaction = new Transaction(transactionDate, transactionTime, TransactionType.WITHDRAW.getTransaction(), amount, balance);
         transactions.add(transaction);
     }
 

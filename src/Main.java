@@ -84,7 +84,7 @@ public class Main {
     }
 
     private static void findAccountByName() {
-        System.out.println("소유자명을 입력해주세요: ");
+        System.out.print("소유자명을 입력해주세요: ");
         String name = sc.next();
 
         Bank bank = Bank.getInstance();
