@@ -2,8 +2,8 @@
 name: issue template
 about: 이슈 등록 템플
 title: ''
-labels: ''
-assignees: ''
+labels: documentation
+assignees: Leehyoju97
 
 ---
 
